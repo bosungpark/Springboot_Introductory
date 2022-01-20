@@ -7,14 +7,15 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import hello.hellospring.domain.Member;
+import hello.hellospring.repository.MemoryMemberRepository;
 
-class MemoryMemberRepository {
+class MemoryMemberRepositoryTest {
     
     MemoryMemberRepository repository = new MemoryMemberRepository();
 
     @AfterEach
     public void afterEach(){
-        repository.clearstore();
+        repository.clearStore();
 
     }
 
@@ -62,8 +63,7 @@ class MemoryMemberRepository {
 
     }
 
-    @Override
-    public void clearstore() {
-        store.clear();
+    public void clearStore() {
+        // store.clear();
     }
 }
