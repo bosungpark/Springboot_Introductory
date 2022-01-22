@@ -1,5 +1,10 @@
 // package hello.hellospring.service;
 
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.boot.test.context.SpringBootTest;
+
+// import hello.hellospring.repository.MemberRepository;
+
 // import org.apache.catalina.startup.ClassLoaderFactory.Repository;
 // import org.junit.jupiter.api.AfterEach;
 // import org.junit.jupiter.api.BeforeEach;
@@ -10,26 +15,18 @@
 
 // import java.util.Optional;
 
+// // import org.springframework.transaction.annotation.Transactional;
+
 // import static org.assertj.core.api.Assertions.*;
 // import static org.junit.jupiter.api.Assertions.assertThrows;
 
-// import hello.hellospring.repository.MemoryMemberRepository;
 
-// class MemberSeviceTest{
+// @SpringBootTest
+// // @Transactional 데이터 베아스의 데이터를 롤백해준다.
+// class MemberServiceIntegrationTest {
 
-//     MemberService memberService;
-//     MemoryMemberRepository memberRepository;
-
-//     @BeforeEach
-//     public void beforeEach(){
-//         memberRepository = new MemoryMemberRepository();
-//         memberService =new MemberService(memberRepository);
-//     }
-
-//     @AfterEach
-//     public void afterEach() {
-//         memberRepository.clearStore();
-//     }
+//     @Autowired MemberService memberService;
+//     @Autowired MemberRepository memberRepository;
 
 //     @Test
 //     void join(){
@@ -53,13 +50,6 @@
 
 //         memberService.join(member1);
 //         assertThrows(IllegalStateException.class, ()-> memberService.join(member2));
-//         // try {
-//         //     memberService.join(member2);
-//         //     fail("need to raise error");
-//         // } catch (IllegalStateException e) {
-//         //     assertThat(e.getMessage()).isEqualTo("member is already exist.");
-//         // }
-
 //     }
 
 //     @Test
@@ -71,4 +61,5 @@
 //     void findOne(){
 
 //     }
+    
 // }
